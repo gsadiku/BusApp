@@ -7,6 +7,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class BusApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(BusApplication.class, args);
+            SpringApplication.run(BusApplication.class, args);
 	}
 }
