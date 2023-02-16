@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
@@ -26,11 +27,16 @@ import reactor.core.publisher.Mono;
 @Service
 public class BusLineService {  
     
-    private final int CHUNK_SIZE = 1000;
-    private final String BUS_LINES_URL = "https://api.sl.se/api2/linedata.json?key=841da421be7f424e98a61adf7424d60b&model=jour&DefaultTransportModeCode=BUS";
-    private final String BUS_LINES_FILE_NAME = "LineData.json";
-    private final String STOP_AREAS_URL = "https://api.sl.se/api2/linedata.json?key=841da421be7f424e98a61adf7424d60b&model=stop&DefaultTransportModeCode=BUS";
-    private final String STOP_AREAS_FILE_NAME = "StopArea.json";
+    @Value("${busApp.chunk-size}")
+    private int CHUNK_SIZE;
+    @Value("${busApp.bus-line-url}")
+    private String BUS_LINES_URL;
+    @Value("${busApp.bus-line-file-name}")
+    private String BUS_LINES_FILE_NAME;
+    @Value("${busApp.bus-stop-url}")
+    private String STOP_AREAS_URL;
+    @Value("${busApp.bus-stop-file-name}")
+    private String STOP_AREAS_FILE_NAME;
     
     private ArrayList<BusLine> filterTopBusLines(int topValue){
         String filePath = fetchApiToFile(BUS_LINES_URL,BUS_LINES_FILE_NAME);       

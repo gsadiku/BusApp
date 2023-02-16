@@ -27,6 +27,7 @@ let busLine = {
                }
             },
             error: function (jqXHR, textStatus, errorThrown) {
+                busLine.clear();
                 $("#simple_list_data").append(`<div><div>Failed to fetch data!</div></div>`);
             }
         });
