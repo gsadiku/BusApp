@@ -7,6 +7,7 @@ package com.gencsadiku.BusApp;
 import java.util.ArrayList;
 import java.util.Collections;
 import org.springframework.beans.factory.annotation.Autowired;
+import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.json.MappingJacksonValue;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,7 +24,7 @@ public class DefaultRestController {
     @Autowired
     BusLineService busLineService;
     
-    @GetMapping("/api/linedata")
+    @GetMapping(path ="/api/linedata", produces = APPLICATION_JSON_VALUE)
     public ResponseEntity<MappingJacksonValue> getTopLineData(@RequestParam("top") int value){
         if(value < 1){
             return ResponseEntity.badRequest().build();
