@@ -1,0 +1,57 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 16-Feb-2023, 16:49:36
+    Author     : gencsadiku
+*/
+body{
+    background-color:#1b1f21
+}
+
+.simple_list{
+    width:100%;
+    margin: 0;
+    color:white;
+    font-family: 'IBM Plex Sans', sans-serif;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: center;
+}
+
+.simple_list > div:nth-child(1){
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:15px;
+    width:100%;
+    border-bottom: 1px solid #404040;
+    height:40px;
+    margin:5px;
+}
+.simple_list > div:nth-child(2) {
+    width:100%;
+    display:flex;
+    flex-wrap: wrap;
+}
+.simple_list > div:nth-child(2) > div{ /** List */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width:100%;
+    min-height:50px;
+    background-color: #262829;
+    margin: 10px;
+    padding:10px;
+    border-radius:4px;
+    
+}
+
+.simple_list > div:nth-child(2) > div:hover{
+    background-color:#3c3c3c;
+    cursor: pointer;
+} 
+.simple_list > div:nth-child(2) > div:active{
+    background-color:#0d0e0f;
+}

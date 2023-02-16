@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.gencsadiku</groupId>
-	<artifactId>BussApp</artifactId>
+	<artifactId>BusApp</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>BussApp</name>
-	<description>Buss Application</description>
+	<name>BusApp</name>
+	<description>Bus Application</description>
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
@@ -42,6 +42,10 @@
 			<artifactId>spring-batch-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+                <dependency>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-webflux</artifactId>
+                </dependency>
 	</dependencies>
 
 	<build>
