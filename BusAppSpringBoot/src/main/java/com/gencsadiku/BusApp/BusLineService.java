@@ -41,7 +41,7 @@ public class BusLineService {
     private ArrayList<BusLine> filterTopBusLines(int topValue){
         String filePath = fetchApiToFile(BUS_LINES_URL,BUS_LINES_FILE_NAME);       
         ArrayList<BusLine> busLines = new ArrayList<>();
-        if(!filePath.equalsIgnoreCase("null")){
+        if(filePath != null){
             ObjectMapper objectMapper = new ObjectMapper();
             try(BufferedReader bufferedReader = new BufferedReader(new FileReader(filePath))){
                 JsonParser jsonParser = objectMapper.getFactory().createParser(bufferedReader);
@@ -88,7 +88,7 @@ public class BusLineService {
     public ArrayList<BusLine> getTopBusLine(int topVal){
         ArrayList<BusLine> busLines = filterTopBusLines(topVal);
         String filePath = fetchApiToFile(STOP_AREAS_URL,STOP_AREAS_FILE_NAME);
-        if(!filePath.equalsIgnoreCase("null")){
+        if(filePath != null){
             Map<Integer,String> stopAreaMap = new HashMap<>();
             ObjectMapper objectMapper = new ObjectMapper();
             int chunkCounter = 0;
